@@ -1,9 +1,17 @@
 <mvc:View controllerName="asset-management.controller.main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true" xmlns="sap.m">
-	<App>
+	<App id="app" >
 		<pages>
 			<Page title="{i18n>title}">
-				<content></content>
+				<content>
+					<HBox justifyContent="Center">
+						<VBox id="scannerBox" >
+							<Button text="Scan" press="onPress" icon="sap-icon://bar-code" type="Emphasized" class="sapUiMediumMarginTop" width="150px" />
+							<!--<Title id="barCode" level="H6" text="123456789654" />-->
+							<Button text="Manual Entry" press="onManualEntry" icon="sap-icon://enter-more" class="sapUiSmallMarginTop" width="150px"/>
+						</VBox>
+					</HBox>
+				</content>
 			</Page>
 		</pages>
 	</App>
