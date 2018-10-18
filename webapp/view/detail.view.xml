@@ -1,16 +1,107 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="asset-management.controller.detail"
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" controllerName="asset-management.controller.detail"
 	xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Detail" showNavButton="true" navButtonPress="navBack">
+	<Page title="Inventory" showNavButton="true" navButtonPress="navBack">
 		<content>
-			<ObjectHeader title="{detailModel>/scanCode}"  >
-				<statuses>
+			<!--<ObjectHeader title="{detailModel>/scanCode}"  >-->
+			<!--	<statuses>-->
 					
-				</statuses>
-				<attributes>
-					<ObjectAttribute text="{WeightMeasure} {WeightUnit}" />
-				</attributes>
-			</ObjectHeader>
+			<!--	</statuses>-->
+			<!--	<attributes>-->
+			<!--		<ObjectAttribute text="{WeightMeasure} {WeightUnit}" />-->
+			<!--	</attributes>-->
+			<!--</ObjectHeader>-->
+			<!--<IconTabBar	expanded="{device>/isNoPhone}"	class="sapUiSmallMarginBottom sapUiResponsiveContentPadding">-->
+			<!--	<items>-->
+			<!--		<IconTabFilter>-->
+						<VBox>
+							<f:SimpleForm 
+								id="formGET"
+								title="Detail for {detailModel>/Inventory}"
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="4"
+								labelSpanM="4"
+								labelSpanS="4"
+								emptySpanL="4"
+								emptySpanM="4"
+								>
+								<f:content>
+									<Label text="Inventory" />
+									<Text text="{detailModel>/Inventory}" />
+									<Label text="Make" />
+									<Text text="{detailModel>/Make}" />
+									<Label text="Model" />
+									<Text text="{detailModel>/Model}" />
+									<Label text="Serial #" />
+									<Text text="{detailModel>/SerialNo}" />
+									<Label text="Description" />
+									<Text text="{detailModel>/Description}" />
+									<Label text="Locator" />
+									<Text text="{detailModel>/Locator}" />
+									<Label text="Status" />
+									<Text text="{detailModel>/Status}" />
+									<Label text="Condition" />
+									<Text text="{detailModel>/Condition}" />
+									<Label text="Bulding" />
+									<Text text="{detailModel>/Bulding}" />
+									<Label text="Comment" />
+									<TextArea rows="3" editable="false" value="{detailModel>/Comment}" />
+								</f:content>
+							</f:SimpleForm>
+							
+							<f:SimpleForm 
+								id="formPUT"
+								maxContainerCols="2"
+								editable="true"
+								layout="ResponsiveGridLayout"
+								labelSpanL="4"
+								labelSpanM="4"
+								labelSpanS="12"
+								emptySpanL="4"
+								emptySpanM="4"
+								>
+								<f:content>
+									<Label text="Inventory" />
+									<Input value="{detailModel>/Inventory}" />
+									<Label text="Make" />
+									<Input value="{detailModel>/Make}" />
+									<Label text="Model" />
+									<Input value="{detailModel>/Model}" />
+									<Label text="Serial #" />
+									<Input value="{detailModel>/SerialNo}" />
+									<Label text="Description" />
+									<Input value="{detailModel>/Description}" />
+									<Label text="Locator" />
+									<Input value="{detailModel>/Locator}" />
+									<Label text="Status" />
+									<Select	forceSelection="false" width="100px" selectedKey="{detailModel>/Status}">
+										<core:Item key="A" text="A" />
+										<core:Item key="O" text="O" />
+										<core:Item key="C" text="C" />
+									</Select>
+									<Label text="Condition" />
+									<Input value="{detailModel>/Condition}" />
+									<Label text="Bulding" />
+									<Input value="{detailModel>/Bulding}" />
+									<Label text="Comment" />
+									<TextArea rows="3" value="{detailModel>/Comment}" />
+									<Label />
+									<Button text="Save" width="100px" type="Emphasized" icon="sap-icon://save" press="onSave" />
+								</f:content>
+							</f:SimpleForm>
+						</VBox>
+			<!--		</IconTabFilter>						-->
+			<!--	</items>-->
+			<!--</IconTabBar>-->
 		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="Create" icon="sap-icon://add-document" press="onCreate" />
+				<Button text="Update" icon="sap-icon://edit" press="onEdit" />
+				<Button text="Rescan" icon="sap-icon://bar-code" press="onScan" />
+			</Toolbar>
+		</footer>
 	</Page>
-		
 </mvc:View>

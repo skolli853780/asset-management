@@ -6,7 +6,7 @@
 				<content>
 					<HBox justifyContent="Center">
 						<VBox id="scannerBox" >
-							<Button text="Scan" press="onPress" icon="sap-icon://bar-code" type="Emphasized" class="sapUiMediumMarginTop" width="150px" />
+							<Button text="Scan" press="onScan" icon="sap-icon://bar-code" type="Emphasized" class="sapUiMediumMarginTop" width="150px" />
 							<!--<Title id="barCode" level="H6" text="123456789654" />-->
 							<Button text="Manual Entry" press="onManualEntry" icon="sap-icon://enter-more" class="sapUiSmallMarginTop" width="150px"/>
 						</VBox>

@@ -1,0 +1,41 @@
+{
+	"InventoryCollection": [
+		{
+			"Inventory": "123456",
+			"Make": "Sony",
+			"Model": "HC-45698",
+			"SerialNo": "987654",
+			"Description": "A very powerful Handy Cam",
+			"Locator": "NY",
+			"Status": "A",
+			"Condition": "Unknown",
+			"Bulding": "B45",
+			"Comment": "Bla bla bla bla bla bla blabla"
+		},
+		{
+			"Inventory": "123457",
+			"Make": "Apple",
+			"Model": "iPhone X",
+			"SerialNo": "2569875",
+			"Description": "Apple iPhone X",
+			"Locator": "ML",
+			"Status": "O",
+			"Condition": "Unknown",
+			"Bulding": "A17",
+			"Comment": "Bla bla bla bla bla bla blabla"
+		},
+		{
+			"Inventory": "123458",
+			"Make": "Samsung",
+			"Model": "Galaxy S9",
+			"SerialNo": "5896547",
+			"Description": "Samsung Galaxy S9",
+			"Locator": "LA",
+			"Status": "C",
+			"Condition": "Unknown",
+			"Bulding": "D6",
+			"Comment": "Bla bla bla bla bla bla blabla"
+		}
+		
+	]
+}

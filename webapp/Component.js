@@ -17,13 +17,17 @@ sap.ui.define([
 		 * @override
 		 */
 		init: function() {
-			// call the base component's init function
+			// call the base component"s init function
 			UIComponent.prototype.init.apply(this, arguments);
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 			
+			this.setModel(new sap.ui.model.json.JSONModel("model/inventory.json"), "inventoryModel");
+			
 			this.setModel(new sap.ui.model.json.JSONModel(), "detailModel");
+			
+			jQuery.sap.require("sap.ndc.BarcodeScanner");
 			
 			this.getRouter().initialize();
 		}
