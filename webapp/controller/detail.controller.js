@@ -34,7 +34,20 @@ sap.ui.define([
 			sap.ndc.BarcodeScanner.scan(
 				function(mResult) {
 					
-					oController.getView().getModel("detailModel").setData({scanCode:mResult.text});
+					var InventoryCollection = oController.getView().getModel("inventoryModel").getData().InventoryCollection;
+						
+					var result = $.grep(InventoryCollection, function(e){ return e.Inventory === mResult.text; });
+					
+					if (result[0]) {
+						oController.getView().getModel("detailModel").setData(result[0]);
+						oController.byId("formGET").setVisible(true);
+						oController.byId("formPUT").setVisible(false);	
+						
+					}
+					else {
+						oController.onCreate();
+						sap.m.MessageToast.show("Inventory not found! \n Create New");
+					}
 					
 				},
 				function(Error) {
