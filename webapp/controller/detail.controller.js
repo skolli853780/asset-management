@@ -14,7 +14,7 @@ sap.ui.define([
 			
 			oController._router.getRoute("detail").attachMatched(function (oEvent) {
 				
-				if (oController.getView().getModel("detailModel").getData().Inventory) {
+				if (oController.getView().getModel("detailModel").getProperty("/inventoryFound")) {
 					oController.byId("formGET").setVisible(true);
 					oController.byId("formPUT").setVisible(false);
 				}
@@ -67,7 +67,8 @@ sap.ui.define([
 				"Status": "",
 				"Condition": "",
 				"Bulding": "",
-				"Comment": ""
+				"Comment": "",
+				"inventoryFound": false
 			});
 			oController.byId("formGET").setVisible(false);
 			oController.byId("formPUT").setVisible(true).setTitle("Create Inventory");

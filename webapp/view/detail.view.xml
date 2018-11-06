@@ -98,8 +98,8 @@
 		<footer>
 			<Toolbar>
 				<ToolbarSpacer/>
-				<Button text="Create" icon="sap-icon://add-document" press="onCreate" />
-				<Button text="Update" icon="sap-icon://edit" press="onEdit" />
+				<Button id="createBtn" text="Create" icon="sap-icon://add-document" visible="{detailModel>/inventoryFound}" press="onCreate" />
+				<Button id="editBtn" text="Update" icon="sap-icon://edit" visible="{detailModel>/inventoryFound}" press="onEdit" />
 				<Button text="Rescan" icon="sap-icon://bar-code" press="onScan" />
 			</Toolbar>
 		</footer>

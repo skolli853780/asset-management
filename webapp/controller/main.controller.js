@@ -29,10 +29,11 @@ sap.ui.define([
 					
 					if (result[0]) {
 						oController.getView().getModel("detailModel").setData(result[0]);
-							
+						oController.getView().getModel("detailModel").setProperty("/inventoryFound", true);	
 						oController._router.navTo("detail");
 					}
 					else {
+						oController.getView().getModel("detailModel").setProperty("/inventoryFound", false);	
 						oController._router.navTo("detail");
 						sap.m.MessageToast.show("Inventory not found! \n Create New");
 					}
@@ -48,7 +49,7 @@ sap.ui.define([
 			);
 		},
 		onManualEntry: function () {
-			
+			oController.getView().getModel("detailModel").setProperty("/inventoryFound", false);
 			oController._router.navTo("detail");
 			
 			// var codeInput = new sap.m.Input({
